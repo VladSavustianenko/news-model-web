@@ -1,3 +1,4 @@
+import os
 import re
 
 from flask import Flask, jsonify, request
@@ -10,6 +11,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
+port = int(os.environ.get("PORT", 5000))
 
 app = Flask(__name__)
 CORS(app)
@@ -165,4 +167,4 @@ def collaborative_filter():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=1000)
+    app.run(host="0.0.0.0", port=port)

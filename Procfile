@@ -1,1 +1,1 @@
-web: gunicorn -w 1 "main:app" -t 120
+web: gunicorn -w 1 "app:app" -t 120
